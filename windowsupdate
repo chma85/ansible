@@ -5,7 +5,7 @@
 # https://docs.ansible.com/ansible/win_reboot_module.html
 
 - name:  Windows Update
-  hosts: all
+  hosts: windows-wm
   gather_facts: false
   tasks:
     - name: Running Windows Update
@@ -19,4 +19,3 @@
     # reboot only if required
     - win_reboot:
       when: result.reboot_required
-      
