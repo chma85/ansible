@@ -1,1 +1,24 @@
 
+---
+- name: Configure NTP Servers
+  hosts: ubuntu-vm
+  become: yes
+
+  tasks:
+    - name: Set NTP servers
+      apt:
+        name: ntp
+        state: present
+
+    - name: Configure NTP servers
+      template:
+        src: templates/ntp.conf.j2
+        dest: /etc/ntp.conf
+      notify:
+        - Restart NTP Service
+
+handlers:
+  - name: Restart NTP Service
+    service:
+      name: ntp
+      state: restarted
