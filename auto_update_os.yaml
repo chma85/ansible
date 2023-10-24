@@ -1,4 +1,4 @@
-- hosts: ubuntu-srv
+- hosts: "{{ hosts }}"
   gather_facts: yes
   become: yes
 
