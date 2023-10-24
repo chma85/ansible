@@ -1,4 +1,3 @@
-- name: docker_prune
   hosts: all
   tasks:
     - name: prune non-dangling images
