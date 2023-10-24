@@ -1,4 +1,4 @@
-- hosts: ubuntu-srv
+- hosts: all
   gather_facts: yes
   become: yes
 
