@@ -5,7 +5,7 @@
 # https://docs.ansible.com/ansible/win_reboot_module.html
 
 - name:  Windows Update
-  hosts: windows_wm
+  hosts: all
   tasks:
     - name: Check for updates
       win_updates:
