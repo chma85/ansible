@@ -2,11 +2,11 @@
   gather_facts: yes
   become: yes
 
-
-- name: Install all critical and security updates
-  win_updates:
-    category_names:
-    - CriticalUpdates
+  tasks:
+    - name: Install all critical and security updates
+      win_updates:
+      category_names:
+        - CriticalUpdates
     - SecurityUpdates
     - UpdateRollups
     state: installed
